@@ -1,17 +1,43 @@
-﻿namespace Solitaire
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
+
+namespace Solitaire
 {
+    enum Color
+    {
+        RED,
+        BLACK
+    }
+
     class Suit
     {
-        public static readonly Suit HEART = new Suit("H");
-        public static readonly Suit SPADE = new Suit("S");
-        public static readonly Suit DIAMOND = new Suit("D");
-        public static readonly Suit CLUB = new Suit("C");
+        public static readonly Suit HEART = new Suit("H", 0, Color.RED);
+        public static readonly Suit SPADE = new Suit("S", 1, Color.BLACK);
+        public static readonly Suit DIAMOND = new Suit("D", 2, Color.RED);
+        public static readonly Suit CLUB = new Suit("C", 3, Color.BLACK);
+
+        public static readonly IEnumerable<Suit> AllValues =
+            new ReadOnlyCollection<Suit>(new [] { HEART, SPADE, DIAMOND, CLUB });
 
         private string abbr;
 
-        private Suit(string abbr)
+        private Suit(string abbr, int ordinal, Color color)
         {
             this.abbr = abbr;
+            Ordinal = ordinal;
+            Color = color;
+        }
+
+        public int Ordinal
+        {
+            get;
+            private set;
+        }
+
+        public Color Color
+        {
+            get;
+            private set;
         }
 
         public override string ToString()

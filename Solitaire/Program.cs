@@ -1,4 +1,4 @@
-﻿using Solitaire.Scorpion;
+﻿using Solitaire.Canfield;
 using System;
 using System.Collections.Generic;
 
@@ -11,14 +11,16 @@ namespace Solitaire
             Shuffler shuffler = new Shuffler();
             int successCount = 0;
             int failCount = 0;
-            for (int i = 0; i < 20000; ++i)
+            for (int i = 1; i < 200; ++i)
             {
                 IList<Card> deck = shuffler.Deal(i);
                 Board board = new Board(deck);
+                board.Dump();
                 Solver solver = new Solver(board);
                 if (solver.Solve())
                 {
                     Console.WriteLine(i);
+                    solver.DumpSolution();
                     ++successCount;
                 }
                 else

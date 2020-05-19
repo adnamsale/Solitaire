@@ -1,4 +1,4 @@
-﻿namespace Solitaire.Scorpion
+﻿namespace Solitaire
 {
     interface IMove
     {
