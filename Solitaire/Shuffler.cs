@@ -21,7 +21,13 @@ namespace Solitaire
                 deck.Add(new Card(Suit.CLUB, i));
             }
 
-            for (int t = 52; t != 1; --t)
+            Shuffle(deck);
+            return deck;
+        }
+
+        public void Shuffle(IList<Card> deck)
+        {
+            for (int t = deck.Count; t != 1; --t)
             {
                 int n = (int)Math.Floor(nextRandom() * t);
                 Card a = deck[t - 1];
@@ -29,13 +35,18 @@ namespace Solitaire
                 deck[t - 1] = i;
                 deck[n] = a;
             }
-            return deck;
         }
 
         double nextRandom()
         {
             e = (9301 * e + 49297) % 233280;
             return (double)e / 233280;
+        }
+
+        public long Seed
+        {
+            get => e;
+            set => e = value;
         }
     }
 }

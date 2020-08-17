@@ -9,3 +9,8 @@ Spoiler: with the constraint that you can only deal from the tail when there are
 suggests that around 9% of games are winnable.
 
 Despite the description saying that Canfield is difficult, most games seem to be winnable. Early results suggest around 82%.
+
+The Addiction solver is currently too slow to get an accurate success percentage. The official game also does not
+take the game number into account when shuffling the cards so it's not possible to come up with a definitive answer
+for whether a particular game is solvable or not. Initial tests suggest that a game is either solvable with no shuffles
+or not (quickly) solvable within the 3-shuffle limit.

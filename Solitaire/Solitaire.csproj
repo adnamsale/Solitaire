@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Addiction\Board.cs" />
+    <Compile Include="Addiction\Solver.cs" />
     <Compile Include="Canfield\Board.cs" />
     <Compile Include="Canfield\Solver.cs" />
     <Compile Include="Card.cs" />
