@@ -1,4 +1,4 @@
-﻿using Solitaire.Addiction;
+﻿using Solitaire.TriPeaks;
 using System;
 using System.Collections.Generic;
 
@@ -9,26 +9,20 @@ namespace Solitaire
         static void Main(string[] args)
         {
             Shuffler shuffler = new Shuffler();
-            int successCount = 0;
-            int failCount = 0;
-            for (int i = 21072; i < 21073; ++i)
+            int lo = 1;
+            int hi = 200;
+            int good = 0;
+            for (int i = lo; i <= hi; ++i)
             {
                 IList<Card> deck = shuffler.Deal(i);
-                Board board = new Board(deck, shuffler);
-                board.Dump();
+                Board board = new Board(deck);
                 Solver solver = new Solver(board);
                 if (solver.Solve())
                 {
-                    Console.WriteLine(i);
-                    solver.DumpSolution();
-                    ++successCount;
-                }
-                else
-                {
-                    ++failCount;
+                    ++good;
                 }
             }
-            Console.WriteLine(100 * successCount / (successCount + failCount) + "%");
+            Console.WriteLine($"Success rate: {(double)good / (hi - lo + 1)}");
         }
     }
 }

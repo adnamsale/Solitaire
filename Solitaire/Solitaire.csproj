@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PriorityQueue, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OptimizedPriorityQueue.5.0.0\lib\net45\PriorityQueue.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -48,15 +51,25 @@
     <Compile Include="Canfield\Board.cs" />
     <Compile Include="Canfield\Solver.cs" />
     <Compile Include="Card.cs" />
+    <Compile Include="Crescent\Board.cs" />
+    <Compile Include="Crescent\Solver.cs" />
+    <Compile Include="Fifteen\Board.cs" />
+    <Compile Include="Fifteen\Solver.cs" />
+    <Compile Include="KitC\Board.cs" />
+    <Compile Include="KitC\Solver.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scorpion\Board.cs" />
     <Compile Include="IMove.cs" />
     <Compile Include="Scorpion\Solver.cs" />
     <Compile Include="Shuffler.cs" />
+    <Compile Include="TriPeaks\Board.cs" />
+    <Compile Include="TriPeaks\Solver.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

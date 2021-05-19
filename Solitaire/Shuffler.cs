@@ -8,19 +8,21 @@ namespace Solitaire
     {
         private long e;
 
-        public IList<Card> Deal(int seed)
+        public IList<Card> Deal(int seed, int decks = 1)
         {
             e = seed;
             List<Card> deck = new List<Card>();
-            for (int i = 1; i <= 13; ++i)
+            for (int j = 0; j < decks; ++j)
             {
-                // HSDC
-                deck.Add(new Card(Suit.HEART, i));
-                deck.Add(new Card(Suit.SPADE, i));
-                deck.Add(new Card(Suit.DIAMOND, i));
-                deck.Add(new Card(Suit.CLUB, i));
+                for (int i = 1; i <= 13; ++i)
+                {
+                    // HSDC
+                    deck.Add(new Card(Suit.HEART, i));
+                    deck.Add(new Card(Suit.SPADE, i));
+                    deck.Add(new Card(Suit.DIAMOND, i));
+                    deck.Add(new Card(Suit.CLUB, i));
+                }
             }
-
             Shuffle(deck);
             return deck;
         }
