@@ -59,6 +59,8 @@
     <Compile Include="KitC\Solver.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Pyramid\Board.cs" />
+    <Compile Include="Pyramid\Solver.cs" />
     <Compile Include="Scorpion\Board.cs" />
     <Compile Include="IMove.cs" />
     <Compile Include="Scorpion\Solver.cs" />

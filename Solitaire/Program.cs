@@ -1,4 +1,4 @@
-﻿using Solitaire.TriPeaks;
+﻿using Solitaire.Pyramid;
 using System;
 using System.Collections.Generic;
 
@@ -9,8 +9,8 @@ namespace Solitaire
         static void Main(string[] args)
         {
             Shuffler shuffler = new Shuffler();
-            int lo = 1;
-            int hi = 200;
+            int lo = 32020;
+            int hi = 32020;
             int good = 0;
             for (int i = lo; i <= hi; ++i)
             {
