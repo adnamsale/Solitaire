@@ -93,7 +93,7 @@ namespace Solitaire.Pyramid
             {
                 return false;
             }
-            return existing < g;
+            return existing <= g;
         }
     }
 }

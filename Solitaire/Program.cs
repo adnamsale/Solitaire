@@ -9,8 +9,8 @@ namespace Solitaire
         static void Main(string[] args)
         {
             Shuffler shuffler = new Shuffler();
-            int lo = 32020;
-            int hi = 32020;
+            int lo = 20579;
+            int hi = 20579;
             int good = 0;
             for (int i = lo; i <= hi; ++i)
             {

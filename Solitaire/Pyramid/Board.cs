@@ -27,8 +27,8 @@ namespace Solitaire.Pyramid
 
             public bool IsPairableWith(TableauPos child)
             {
-                return null != Card && (LeftChild?.Card == null || LeftChild?.Card == child.Card) &&
-                    (RightChild?.Card == null || RightChild?.Card == child.Card);
+                return null != Card && (LeftChild?.Card == child.Card || RightChild?.Card == child.Card) &&
+                    (LeftChild?.Card == null || RightChild?.Card == null);
             }
         }
 
@@ -388,7 +388,15 @@ namespace Solitaire.Pyramid
                         answer += pos.Card == null ? " " : "X";
                     }
                 }
-
+                int[] counts = new int[14];
+                foreach (Card card in foundation)
+                {
+                    ++counts[card.Rank];
+                }
+                foreach (int i in counts)
+                {
+                    answer += i.ToString("D2");
+                }
                 return answer;
             }
         }
