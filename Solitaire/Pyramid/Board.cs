@@ -379,23 +379,21 @@ namespace Solitaire.Pyramid
             get
             {
                 string answer = "";
-                answer += stock.Count == 0 ? "   " : stock.Last().ToString();
-                answer += waste.Count == 0 ? "   " : waste.Last().ToString();
+                foreach (Card card in stock)
+                {
+                    answer += card;
+                }
+                answer += "|";
+                foreach (Card card in waste)
+                {
+                    answer += card;
+                }
                 foreach (TableauPos[] line in tableau)
                 {
                     foreach (TableauPos pos in line)
                     {
                         answer += pos.Card == null ? " " : "X";
                     }
-                }
-                int[] counts = new int[14];
-                foreach (Card card in foundation)
-                {
-                    ++counts[card.Rank];
-                }
-                foreach (int i in counts)
-                {
-                    answer += i.ToString("D2");
                 }
                 return answer;
             }
